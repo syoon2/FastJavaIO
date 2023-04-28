@@ -8,10 +8,11 @@
  **/
 package com.williamfiset.fastjavaio;
 
+import java.io.Closeable;
 import java.io.InputStream;
 import java.io.IOException;
 
-public class InputReader {
+public class InputReader implements Closeable {
   
   /**
    * The default size of the InputReader's buffer is 2<sup>16</sup>.
@@ -543,6 +544,7 @@ public class InputReader {
   }
 
   // Closes the input stream
+  @Override
   public void close() throws IOException {
     stream.close();
   }
